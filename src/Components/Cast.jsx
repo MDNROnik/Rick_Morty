@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FaGlobe, FaHeart, FaMars } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import { DataContext } from "../Context/DataProvider";
@@ -9,7 +9,23 @@ const Cast = () => {
 
   const character = characters[id.id];
 
-  console.log(character);
+  const [epiName, setEpiName] = useState([]);
+
+  useEffect(() => {
+    const fetchEpisodes = async () => {
+      try {
+        const responses = await Promise.all(
+          character.episode.map((ep) => fetch(ep).then((res) => res.json()))
+        );
+        const names = responses.map((data) => data.name);
+        setEpiName(names);
+      } catch (error) {
+        console.error("Failed to fetch episodes:", error);
+      }
+    };
+
+    fetchEpisodes();
+  }, [character.episode]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0d1b2a] to-[#1b263b] text-white p-6 flex justify-center items-center">
@@ -68,7 +84,7 @@ const Cast = () => {
           <div className="col-span-2 p-4 bg-[#243b55] rounded-xl shadow overflow-y-auto max-h-40">
             <p className="text-sm text-gray-400">Episode(s)</p>
             <ul className="list-disc list-inside space-y-1">
-              {character.episode.map((ep, index) => (
+              {epiName?.map((ep, index) => (
                 <li key={index}>{ep}</li>
               ))}
             </ul>
