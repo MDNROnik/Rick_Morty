@@ -3,17 +3,17 @@ import { DataContext } from "../Context/DataProvider";
 
 const Location = () => {
   const { locations } = useContext(DataContext);
-//   const res = locations.results;
-// //   console.log(res);
-  
-//   const simplifiedLocation = locations?.map((epi) => ({
-//     id: epi.id,
-//     name: epi.name,
-//   }));
-//   if (simplifiedLocation) {
-//     // setCast(simplifiedCharacters);
-//     // console.log("Simplified Characters:", simplifiedLocation[9]);
-//   }
+  //   const res = locations.results;
+  // //   console.log(res);
+
+  //   const simplifiedLocation = locations?.map((epi) => ({
+  //     id: epi.id,
+  //     name: epi.name,
+  //   }));
+  //   if (simplifiedLocation) {
+  //     // setCast(simplifiedCharacters);
+  //     // console.log("Simplified Characters:", simplifiedLocation[9]);
+  //   }
   return (
     <div>
       <div>
@@ -30,6 +30,8 @@ const Location = () => {
           ))}
         </div>
       </div>
+
+      
     </div>
   );
 };
