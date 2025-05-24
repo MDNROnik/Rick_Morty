@@ -5,6 +5,8 @@ import CastList from "./Components/CastList";
 import Episodes from "./Components/Episodes";
 import Location from "./Components/Location";
 import { DataContext } from "./Context/DataProvider";
+import img from "./assets/bubble.png"
+
 function App() {
   const { setCharacters, setEpisodes, setLocations } = useContext(DataContext);
 
@@ -117,7 +119,7 @@ function App() {
       <div className="min-h-screen bg-gradient-to-r from-gray-900 via-gray-800 to-blue-900 text-white p-8 flex flex-col items-center justify-center relative overflow-hidden">
         {/* <div className="absolute top-0 left-0 w-full h-full bg-[url('/background-image.png')] bg-cover bg-center opacity-5 z-0"></div> */}
 
-        <div className="absolute left-87 top-10 z-10">
+        <div className="absolute left-87 top-10 z-10 bg-[url({img})] ">
           <p>RICK AND MORTY</p>
         </div>
 
