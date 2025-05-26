@@ -19,7 +19,6 @@ const CastList = () => {
 
   return (
     <div className="w-[1000px] ">
-      <h1>HELLO WORLD</h1>
       <div className="bg-[#0a0f1b] p-6 text-white">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-semibold border-2">Meet The Cast</h2>
