@@ -19,6 +19,7 @@ const CastList = () => {
 
   return (
     <div className="w-[1000px] ">
+      <h1>HELLO WORLD</h1>
       <div className="bg-[#0a0f1b] p-6 text-white">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-semibold border-2">Meet The Cast</h2>
@@ -28,7 +29,6 @@ const CastList = () => {
           </button>
         </div>
         <div className="relative px-8 py-10 bg-[#0f172a]">
-          {/* Scroll Buttons */}
           <button
             className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white text-lime-500 rounded-full p-2 shadow-md"
             onClick={() => scroll(-200)}
@@ -42,7 +42,6 @@ const CastList = () => {
             <FaChevronRight />
           </button>
 
-          {/* Scrollable Cards */}
           <div
             ref={scrollRef}
             className="flex overflow-x-auto gap-4 px-6 scrollbar-hide"
