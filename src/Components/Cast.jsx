@@ -32,7 +32,6 @@ const Cast = () => {
 
   return (
     <div className="bg-[{img}] bg-cover bg-center h-64 w-full">
-      <h1>hello world</h1>
       <div className="min-h-screen bg-gradient-to-br from-[#0d1b2a] to-[#1b263b] text-white p-6 flex justify-center items-center">
         <div className="bg-[#1b263b] shadow-lg rounded-2xl p-6 max-w-4xl w-full grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="flex flex-col items-center text-center">
