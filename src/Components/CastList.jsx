@@ -13,15 +13,11 @@ const CastList = () => {
   const scroll = (offset) => {
     console.log(scrollRef.current.scrollLeft);
 
+    setPosition(scrollRef.current.scrollLeft + offset);
+
+    console.log(scrollRef.current.scrollLeft + offset);
     scrollRef.current.scrollLeft += offset;
-    setPosition(scrollRef.current.scrollLeft);
-
-    console.log(scrollRef.current.scrollLeft);
   };
-
-  // useEffect(() => {
-  //   console.log(scrollRef.current.scrollLeft);
-  // }, [postion]);
 
   const handleViewMore = () => {
     navigate("/casts");
@@ -41,7 +37,7 @@ const CastList = () => {
           </button>
         </div>
         <div className="relative px-8 py-10 ">
-          {postion >= 1 && (
+          {postion > 0 && (
             <button
               className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white text-lime-500 rounded-full p-2 shadow-md"
               onClick={() => scroll(-200)}

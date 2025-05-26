@@ -11,8 +11,10 @@ const Episodes = () => {
   const scroll = (offset) => {
     // console.log(scrollRef.current.scrollLeft);
 
+    setPosition(scrollRef.current.scrollLeft + offset);
+
+    // console.log(scrollRef.current.scrollLeft + offset);
     scrollRef.current.scrollLeft += offset;
-    setPosition(scrollRef.current.scrollLeft);
   };
 
   return (

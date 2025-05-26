@@ -9,10 +9,12 @@ const Location = () => {
   const scrollRef = useRef(null);
 
   const scroll = (offset) => {
-    console.log(scrollRef.current.scrollLeft);
+    // console.log(scrollRef.current.scrollLeft);
 
+    setPosition(scrollRef.current.scrollLeft + offset);
+
+    // console.log(scrollRef.current.scrollLeft + offset);
     scrollRef.current.scrollLeft += offset;
-    setPosition(scrollRef.current.scrollLeft);
   };
   return (
     <div className=" text-white">
