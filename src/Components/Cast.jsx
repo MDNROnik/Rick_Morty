@@ -1,14 +1,22 @@
 import { useContext, useEffect, useState } from "react";
-import { FaGlobe, FaHeart, FaMars } from "react-icons/fa";
+import {
+  FaGlobe,
+  FaHeart,
+  FaMapMarkerAlt,
+  FaTransgender,
+} from "react-icons/fa";
+import { MdPlaylistPlay } from "react-icons/md";
+
+import { FiExternalLink } from "react-icons/fi";
+import { GiRobotGolem } from "react-icons/gi";
 import { useParams } from "react-router-dom";
 import { DataContext } from "../Context/DataProvider";
-import Background from "../assets/Background.png"
-import img from "../assets/bubble.png"
 
 const Cast = () => {
   const id = useParams();
 
   const { characters } = useContext(DataContext);
+  const [count, setCount] = useState(0);
 
   const character = characters[id.id];
 
@@ -22,6 +30,7 @@ const Cast = () => {
         );
         const names = responses.map((data) => data.name);
         setEpiName(names);
+        setCount(names.length);
       } catch (error) {
         console.error("Failed to fetch episodes:", error);
       }
@@ -30,69 +39,94 @@ const Cast = () => {
     fetchEpisodes();
   }, [character.episode]);
 
+  const InfoCard = ({ icon, label, value, link }) => (
+    <div
+      className={`bg-white/5 rounded-xl p-4 border border-lime-500/30 text-white flex justify-between items-center ${link ? "cursor-pointer" : ""}`}
+    >
+      <div className="flex flex-col items-left text-white">
+        <div className="text-2xl">{icon}</div>
+        <p className="text-xs text-gray-400">{label}</p>
+        <p className="font-semibold text-sm">{value}</p>
+      </div>
+
+      {/* <div className="flex items-center gap-2">
+        {icon}
+        <div>
+          <p className="text-xs text-gray-400">{label}</p>
+          <p className="font-semibold text-sm">{value}</p>
+        </div>
+      </div> */}
+      {link && <FiExternalLink className="text-gray-400" />}
+    </div>
+  );
+  // className="outlined-text text-4xl font-bold"
+
   return (
-    <div className="bg-[{img}] bg-cover bg-center h-64 w-full">
-      <div className="min-h-screen bg-gradient-to-br from-[#0d1b2a] to-[#1b263b] text-white p-6 flex justify-center items-center">
-        <div className="bg-[#1b263b] shadow-lg rounded-2xl p-6 max-w-4xl w-full grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="flex flex-col items-center text-center">
+    <div className=" relative min-h-screen text-white flex justify-center items-center">
+      <div className="absolute left-0 top-0 h-full flex items-center z-0">
+        <h1 className=" outlined-text text-[64px] font-bold text-[#00ffcc] opacity-15 rotate-[-90deg] tracking-widest">
+          {character.name}
+        </h1>
+      </div>
+      <div className="relative z-10 flex  items-center justify-center w-full max-w-4xl ">
+        <div className="flex flex-col items-center text-center">
+          <h2 className="mb-4 text-2xl font-bold text-[#00ffcc]">
+            {character.name}
+          </h2>
+          <div className=" bg-white/5  border border-lime-500/60">
             <img
               src={character.image}
               alt={character.name}
-              className="rounded-xl w-40 h-40 object-cover border-4 border-[#00ffcc]"
+              className="w-full h-full p-6 object-cover rounded-md"
             />
-            <h2 className="mt-4 text-2xl font-bold text-[#00ffcc]">
-              {character.name}
-            </h2>
+          </div>
+        </div>
+
+        <div className="h-40 w-px bg-green-500 mx-4"></div>
+
+        <div className="space-y-4 text-sm">
+          <div className="grid grid-cols-3 gap-4">
+            <InfoCard
+              icon={<FaHeart className="text-lime-400" />}
+              label="Status"
+              value={character.status}
+            />
+            <InfoCard
+              icon={<GiRobotGolem className="text-lime-400" />}
+              label="Species"
+              value={character.species}
+            />
+            <InfoCard
+              icon={<FaTransgender className="text-lime-400" />}
+              label="Gender"
+              value={character.gender}
+            />
           </div>
 
-          <div className="md:col-span-2 grid grid-cols-2 gap-4">
-            <div className="p-4 bg-[#243b55] rounded-xl shadow">
-              <p className="text-sm text-gray-400">Status</p>
-              <div className="flex items-center gap-2">
-                <FaHeart className="text-green-400" />
-                <p>{character.status}</p>
-              </div>
-            </div>
+          <InfoCard
+            icon={<FaGlobe className="text-lime-400" />}
+            label="Origin"
+            value={character.origin.name}
+            link
+          />
+          <InfoCard
+            icon={<FaMapMarkerAlt className="text-lime-400" />}
+            label="Last Known Location"
+            value={character.location.name}
+            link
+          />
 
-            <div className="p-4 bg-[#243b55] rounded-xl shadow">
-              <p className="text-sm text-gray-400">Species</p>
-              <div className="flex items-center gap-2">
-                <p>{character.species}</p>
-              </div>
-            </div>
+          <div className="col-span-2 p-4 bg-white/5 border border-lime-500/30 rounded-xl  overflow-y-auto max-h-40">
+            <span className="text-lime-500">
+              <MdPlaylistPlay size={32} />
+            </span>
 
-            <div className="p-4 bg-[#243b55] rounded-xl shadow">
-              <p className="text-sm text-gray-400">Gender</p>
-              <div className="flex items-center gap-2">
-                <FaMars className="text-blue-400" />
-                <p>{character.gender}</p>
-              </div>
-            </div>
-
-            <div className="p-4 bg-[#243b55] rounded-xl shadow">
-              <p className="text-sm text-gray-400">Origin</p>
-              <div className="flex items-center gap-2">
-                <FaGlobe className="text-teal-400" />
-                <p>{character.origin.name}</p>
-              </div>
-            </div>
-
-            <div className="col-span-2 p-4 bg-[#243b55] rounded-xl shadow">
-              <p className="text-sm text-gray-400">Last Known Location</p>
-              <div className="flex items-center gap-2">
-                <FaGlobe className="text-purple-400" />
-                <p>{character.location.name}</p>
-              </div>
-            </div>
-
-            <div className="col-span-2 p-4 bg-[#243b55] rounded-xl shadow overflow-y-auto max-h-40">
-              <p className="text-sm text-gray-400">Episode(s)</p>
-              <ul className="list-disc list-inside space-y-1">
-                {epiName?.map((ep, index) => (
-                  <li key={index}>{ep}</li>
-                ))}
-              </ul>
-            </div>
+            <p className="text-sm text-gray-400">Episode({count})</p>
+            <ul className="list-disc list-inside space-y-1">
+              {epiName?.map((ep, index) => (
+                <li key={index}>{ep}</li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

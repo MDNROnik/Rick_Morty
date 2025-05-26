@@ -16,14 +16,14 @@ const Casts = () => {
             // }}
             to={`/casts/${index}`}
             key={index}
-            className="bg-gray-800 rounded-2xl p-2 shadow-lg text-center text-white hover:scale-105 transition-transform"
+            className="w-[220px] min-h-[240px] bg-white/5 rounded-xl border border-green-500 p-4 text-white shadow-md"
           >
             <img
               src={member.image}
               alt={member.name}
-              className="rounded-lg mb-2 h-32 w-full object-cover"
+              className="w-full h-40 object-cover rounded-md"
             />
-            <p className="text-sm font-medium">{member.name}</p>
+            <p className="mt-2 text-sm font-semibold">{member.name}</p>
           </Link>
         ))}
       </div>

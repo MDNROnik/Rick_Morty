@@ -1,5 +1,4 @@
 import { FaPlay } from "react-icons/fa";
-import Logo from "../assets/logo.png";
 import portal from "../assets/portal.png";
 
 const Banner = () => {
@@ -8,9 +7,6 @@ const Banner = () => {
   };
   return (
     <div>
-      <div className="flex justify-center">
-        <img src={Logo} className="w-32" />
-      </div>
       <div className="pt-20 ">
         <div className="flex items-center justify-center space-x-2">
           <span className="text-white text-8xl font-bold italic">THE</span>

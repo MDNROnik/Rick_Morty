@@ -1,11 +1,8 @@
 import { useContext, useEffect } from "react";
 import { useLoaderData } from "react-router";
+import { Outlet } from "react-router-dom";
 import bg from "./assets/Background.PNG";
-// import Logo from "./assets/logo.png";
-import Banner from "./Components/Banner";
-import CastList from "./Components/CastList";
-import Episodes from "./Components/Episodes";
-import Location from "./Components/Location";
+import Logo from "./assets/logo.png";
 import { DataContext } from "./Context/DataProvider";
 
 function App() {
@@ -87,6 +84,7 @@ function App() {
 
   const initialLinks = useLoaderData();
   useEffect(() => {
+    console.log(initialLinks);
     if (initialLinks) {
       const { characters, episodes, locations } = initialLinks;
       fetch(characters)
@@ -117,30 +115,18 @@ function App() {
 
   return (
     <div
-      className=" bg-cover bg-center text-white p-8 flex flex-col items-center justify-center relative overflow-hidden"
+      className=" bg-cover bg-center text-white p-4 flex flex-col items-center justify-center relative overflow-hidden"
       style={{ backgroundImage: `url(${bg})` }}
     >
-      {/* <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-800 to-blue-900 bg-opacity-60 z-0"></div> */}
-
-      {/* <div class="relative"> */}
       <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950 to-blue-950 opacity-90"></div>
-      <div className="w-full relative z-10 p-8 text-white">
+      <div className="w-full relative z-10 text-white custom-scrollbar">
         <div className="">
-          <Banner className="p-5"></Banner>
-          <CastList></CastList>
-          <Episodes></Episodes>
-          <Location></Location>
+          <div className="flex justify-center">
+            <img src={Logo} className="w-32" />
+          </div>
+          <Outlet></Outlet>
         </div>
       </div>
-      {/* </div> */}
-
-      {/* <img src={Logo} className="w-32" />
-      <div className="w-full">
-        <Banner className="p-5"></Banner>
-        <CastList></CastList>
-        <Episodes></Episodes>
-        <Location></Location>
-      </div> */}
     </div>
   );
 }
