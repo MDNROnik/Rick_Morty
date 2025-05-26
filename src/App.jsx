@@ -118,13 +118,13 @@ function App() {
       className=" bg-cover bg-center text-white p-4 flex flex-col items-center justify-center relative overflow-hidden"
       style={{ backgroundImage: `url(${bg})` }}
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950 to-blue-950 opacity-90"></div>
+      <div className=" absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950 to-blue-950 opacity-90"></div>
       <div className="w-full relative z-10 text-white custom-scrollbar">
-        <div className="">
-          <div className="flex justify-center">
-            <img src={Logo} className="w-32" />
-          </div>
-          <Outlet></Outlet>
+        <div className="flex justify-center">
+          <img src={Logo} className="w-40 pt-5" />
+        </div>
+        <div className="relative -left-4 lg:left-0">
+          <Outlet className=""></Outlet>
         </div>
       </div>
     </div>

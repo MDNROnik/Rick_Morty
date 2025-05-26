@@ -15,7 +15,13 @@ const CastList = () => {
 
     scrollRef.current.scrollLeft += offset;
     setPosition(scrollRef.current.scrollLeft);
+
+    console.log(scrollRef.current.scrollLeft);
   };
+
+  // useEffect(() => {
+  //   console.log(scrollRef.current.scrollLeft);
+  // }, [postion]);
 
   const handleViewMore = () => {
     navigate("/casts");
@@ -24,8 +30,8 @@ const CastList = () => {
   return (
     // className="w-[1000px] "
     <div>
-      <div className=" p-6 text-white">
-        <div className="flex justify-between items-center mb-4">
+      <div className="  text-white">
+        <div className="flex justify-between items-center px-8 py-4 ">
           <h2 className="text-xl font-semibold ">Meet The Cast</h2>
           <button
             onClick={handleViewMore}
@@ -35,7 +41,7 @@ const CastList = () => {
           </button>
         </div>
         <div className="relative px-8 py-10 ">
-          {postion > 0 && (
+          {postion >= 1 && (
             <button
               className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white text-lime-500 rounded-full p-2 shadow-md"
               onClick={() => scroll(-200)}
@@ -54,7 +60,7 @@ const CastList = () => {
 
           <div
             ref={scrollRef}
-            className="flex overflow-x-auto gap-4 px-6 scrollbar-hide snap-x scroll-smooth snap-mandatory"
+            className="flex overflow-x-auto gap-10  scrollbar-hide snap-x scroll-smooth snap-mandatory"
           >
             {characters.map((char, index) => (
               <div

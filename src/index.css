@@ -3,7 +3,7 @@ div::-webkit-scrollbar {
   display: none;
 }
 
-.custom-scrollbar::-webkit-scrollbar {
+/* .custom-scrollbar::-webkit-scrollbar {
   width: 6px;
 }
 
@@ -20,6 +20,15 @@ div::-webkit-scrollbar {
 .custom-scrollbar {
   scrollbar-width: thin;
   scrollbar-color: #22d3ee transparent;
+} */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }
 
 .outlined-text {
