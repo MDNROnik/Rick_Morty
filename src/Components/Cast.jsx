@@ -72,13 +72,18 @@ const Cast = () => {
 
   return (
     <div className=" relative min-h-screen text-white flex justify-center items-center">
-      <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center w-full max-w-4xl gap-10 lg:gap-20">
+      <div className="relative z-10 flex flex-col lg:flex-row justify-center items-center w-full max-w-4xl gap-10 lg:gap-20">
         <div className="flex flex-col items-center text-center">
           <div className="absolute -left-80 top-0 h-full flex items-center z-0 ">
             <h1 className="hidden sm:block outlined-text text-[64px] font-bold text-[#00ffcc] opacity-15 rotate-[-90deg] tracking-widest">
               {character.name}
             </h1>
           </div>
+          {/* <div className="absolute -left-100 top-0 h-full flex items-center z-0">
+            <h1 className="hidden lg:block flex flex-wrap outlined-text text-[64px] font-bold text-[#00ffcc] opacity-15 rotate-[-90deg] tracking-widest">
+              {character.name}
+            </h1>
+          </div> */}
           <h2 className="mb-4 text-5xl font-bold text-cyan-300">
             {character.name}
           </h2>
@@ -91,9 +96,11 @@ const Cast = () => {
           </div>
         </div>
 
-        <div className="h-40 w-px  border-1 border-l-cyan-400 border-b-green-300 border-r-green-600 border-t-cyan-600 mx-4 hidden sm:block md:hidden "></div>
+        <div className="h-40 w-px border-1 border-l-cyan-400 border-b-green-300 border-r-green-600 border-t-cyan-600 mx-4 hidden lg:block"></div>
 
-        <div className="space-y-4 text-sm">
+        {/* <div className="h-40 w-px  border-1 border-l-cyan-400 border-b-green-300 border-r-green-600 border-t-cyan-600 mx-4 sm:hidden md:hidden "></div> */}
+
+        <div className="space-y-4 text-sm w-88">
           <div className="grid grid-cols-3 gap-4">
             <InfoCard
               icon={<FaHeart className="text-lime-400" />}
