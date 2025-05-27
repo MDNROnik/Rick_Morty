@@ -8,83 +8,9 @@ import { DataContext } from "./Context/DataProvider";
 function App() {
   const { setCharacters, setEpisodes, setLocations } = useContext(DataContext);
 
-  // useEffect(() => {
-  //   //fetch the all urls from the api
-  //   fetch("https://rickandmortyapi.com/api")
-  //     .then((response) => {
-  //       // if (!response.ok) {
-  //       //   throw new Error("Network response was not ok");
-  //       // }
-  //       return response.json();
-  //     })
-  //     .then((data) => {
-  //       const { characters, episodes, locations } = data;
-
-  //       //fetch the characters
-  //       fetch(characters)
-  //         .then((response) => {
-  //           if (!response.ok) {
-  //             throw new Error("Network response was not ok");
-  //           }
-  //           return response.json();
-  //         })
-  //         .then((data) => {
-  //           setCharacters(data);
-  //           // console.log("Characters:", data);
-  //         })
-  //         .catch((error) => {
-  //           console.error(
-  //             "There was a problem with the fetch operation:",
-  //             error
-  //           );
-  //         });
-
-  //       //fetch the episodes
-  //       fetch(episodes)
-  //         .then((response) => {
-  //           if (!response.ok) {
-  //             throw new Error("Network response was not ok");
-  //           }
-  //           return response.json();
-  //         })
-  //         .then((data) => {
-  //           setEpisodes(data);
-  //           // console.log("episodes:", data);
-  //         })
-  //         .catch((error) => {
-  //           console.error(
-  //             "There was a problem with the fetch operation:",
-  //             error
-  //           );
-  //         });
-
-  //       //fetch the locations
-  //       fetch(locations)
-  //         .then((response) => {
-  //           if (!response.ok) {
-  //             throw new Error("Network response was not ok");
-  //           }
-  //           return response.json();
-  //         })
-  //         .then((data) => {
-  //           setLocations(data);
-  //           // console.log("locations:", data);
-  //         })
-  //         .catch((error) => {
-  //           console.error(
-  //             "There was a problem with the fetch operation:",
-  //             error
-  //           );
-  //         });
-  //     })
-  //     .catch((error) => {
-  //       console.error("There was a problem with the fetch operation:", error);
-  //     });
-  // }, []);
-
   const initialLinks = useLoaderData();
   useEffect(() => {
-    console.log(initialLinks);
+    // console.log(initialLinks);
     if (initialLinks) {
       const { characters, episodes, locations } = initialLinks;
       fetch(characters)

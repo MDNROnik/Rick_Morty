@@ -1,5 +1,6 @@
 import { useContext, useRef, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useMediaQuery } from "react-responsive";
 import { DataContext } from "../Context/DataProvider";
 
 const Location = () => {
@@ -13,9 +14,12 @@ const Location = () => {
     // console.log(locations);
     setPosition(scrollRef.current.scrollLeft + offset);
 
-    console.log(scrollRef.current.scrollLeft + offset);
+    // console.log(scrollRef.current.scrollLeft + offset);
     scrollRef.current.scrollLeft += offset;
   };
+  const isSmall = useMediaQuery({ maxWidth: 640 });
+  const isMedium = useMediaQuery({ minWidth: 641, maxWidth: 1022 });
+  const isLarge = useMediaQuery({ minWidth: 1023 });
   return (
     <div className=" text-white">
       <div className="flex justify-between items-center px-8 py-4">
@@ -24,15 +28,31 @@ const Location = () => {
       <div className="relative px-8 py-10 ">
         {postion > 0 && (
           <button
-            className="absolute left-0 top-17.5 -translate-y-1/2 z-10 bg-white text-lime-500 rounded-full p-2 shadow-md"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white text-lime-500 rounded-full p-2 shadow-md"
             onClick={() => scroll(-200)}
           >
             <FaChevronLeft />
           </button>
         )}
-        {postion < 2850 && (
+        {isLarge && postion < 2815 && (
           <button
-            className="absolute right-0 top-17.5 -translate-y-1/2 z-10 bg-white text-lime-500 rounded-full p-2 shadow-md"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white text-lime-500 rounded-full p-2 shadow-md"
+            onClick={() => scroll(200)}
+          >
+            <FaChevronRight />
+          </button>
+        )}
+        {isMedium && postion < 3601 && (
+          <button
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white text-lime-500 rounded-full p-2 shadow-md"
+            onClick={() => scroll(200)}
+          >
+            <FaChevronRight />
+          </button>
+        )}
+        {isSmall && postion < 3915 && (
+          <button
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white text-lime-500 rounded-full p-2 shadow-md"
             onClick={() => scroll(200)}
           >
             <FaChevronRight />
