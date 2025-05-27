@@ -81,7 +81,7 @@ const Location = () => {
               <p className="text-sm font-semibold truncate">{location.name}</p>
               <div className="relative">
                 {/* Diagonal Line */}
-                <div className="absolute w-[1px] h-[35px] bg-green-400 -top-3 left-49 transform rotate-52 origin-top-left shadow-[0_0_4px_#00ffff]" />
+                <div className="absolute w-[2px] h-[35px] bg-green-400 -top-3 left-49 transform rotate-50 origin-top-left " />
               </div>{" "}
             </div>
           ))}

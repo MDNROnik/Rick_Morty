@@ -16,7 +16,7 @@ const CastList = () => {
 
     setPosition(scrollRef.current.scrollLeft + offset);
 
-    // console.log(scrollRef.current.scrollLeft + offset);
+    console.log(scrollRef.current.scrollLeft + offset);
     scrollRef.current.scrollLeft += offset;
   };
 
@@ -70,7 +70,7 @@ const CastList = () => {
               <FaChevronRight />
             </button>
           )}
-          {isSmall && postion < 3400 && (
+          {isSmall && postion < 3600 && (
             <button
               className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white text-lime-500 rounded-full p-2 shadow-md"
               onClick={() => scroll(200)}

@@ -54,7 +54,7 @@ function App() {
         </div>
       </div>
 
-      <div
+      {/* <div
         className="relative inline-block px-4 py-2 bg-[#1e2235] text-white font-medium text-sm 
                     [clip-path:polygon(0_0,100%_0,100%_65%,85%_100%,0_100%)] 
                     border-1 border-l-cyan-400 border-b-green-300 border-r-green-600 border-t-cyan-600"
@@ -62,10 +62,9 @@ function App() {
         <div className="text-xs text-gray-400">S01 E05</div>
         <div>Meeseeks And Destroy</div>
         <div className="relative">
-          {/* Diagonal Line */}
           <div className="absolute w-[1px] h-[35px] bg-green-400 -top-3 left-41 transform rotate-55 origin-top-left shadow-[0_0_4px_#00ffff]" />
         </div>{" "}
-      </div>
+      </div> */}
     </div>
   );
 }
