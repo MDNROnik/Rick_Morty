@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import { useLoaderData } from "react-router";
 import { Outlet } from "react-router-dom";
 import bg from "./assets/Background.png";
-import Logo from "./assets/logo.png";
+import Logo from "./assets/Logo.png";
 import { DataContext } from "./Context/DataProvider";
 
 function App() {
