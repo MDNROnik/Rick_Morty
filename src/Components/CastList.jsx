@@ -60,7 +60,7 @@ const CastList = () => {
           >
             {characters.map((char, index) => (
               <div
-                className=" relative bg-[#0f172a] text-white rounded-md min-w-[160px] overflow-hidden border border-lime-500 "
+                className=" relative bg-[#0f172a] text-white rounded-md min-w-[160px] overflow-hidden border border-l-1 border-r-1 border-b-1 border-t-1 border-b-cyan-400 border-l-green-300 border-t-green-600 border-r-cyan-600 "
                 key={index}
               >
                 <img

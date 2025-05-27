@@ -72,14 +72,14 @@ const Cast = () => {
 
   return (
     <div className=" relative min-h-screen text-white flex justify-center items-center">
-      <div className="absolute left-0 top-0 h-full flex items-center z-0 ">
-        <h1 className="hidden sm:block outlined-text text-[64px] font-bold text-[#00ffcc] opacity-15 rotate-[-90deg] tracking-widest">
-          {character.name}
-        </h1>
-      </div>
-      <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center w-full max-w-4xl ">
+      <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center w-full max-w-4xl gap-10 lg:gap-20">
         <div className="flex flex-col items-center text-center">
-          <h2 className="mb-4 text-2xl font-bold text-[#00ffcc]">
+          <div className="absolute -left-80 top-0 h-full flex items-center z-0 ">
+            <h1 className="hidden sm:block outlined-text text-[64px] font-bold text-[#00ffcc] opacity-15 rotate-[-90deg] tracking-widest">
+              {character.name}
+            </h1>
+          </div>
+          <h2 className="mb-4 text-5xl font-bold text-[#00ffcc]">
             {character.name}
           </h2>
           <div className=" bg-white/5  border border-lime-500/60">
@@ -91,7 +91,6 @@ const Cast = () => {
           </div>
         </div>
 
-        <br />
         <div className="h-40 w-px bg-green-500 mx-4 hidden sm:block"></div>
 
         <div className="space-y-4 text-sm">
@@ -126,7 +125,7 @@ const Cast = () => {
             link
           />
 
-          <div className="col-span-2 p-4 bg-white/5 border border-lime-500/30 rounded-xl  overflow-y-auto max-h-40">
+          <section className="custom-scrollbar col-span-2 p-4 bg-white/5 border border-lime-500/30 rounded-xl  overflow-y-auto max-h-40">
             <span className="text-lime-500">
               <MdPlaylistPlay size={32} />
             </span>
@@ -137,80 +136,10 @@ const Cast = () => {
                 <li key={index}>{ep}</li>
               ))}
             </ul>
-          </div>
+          </section>
         </div>
       </div>
     </div>
-
-    // <div className="relative min-h-screen text-white flex justify-center items-center p-4">
-    //   <div className="absolute left-0 top-0 h-full flex items-center z-0">
-    //     <h1 className="outlined-text text-[32px] md:text-[64px] font-bold text-[#00ffcc] opacity-15 rotate-[-90deg] tracking-widest">
-    //       {character.name}
-    //     </h1>
-    //   </div>
-
-    //   <div className="relative z-10 w-full max-w-6xl flex flex-col md:flex-row items-center gap-6">
-    //     <div className="flex flex-col items-center text-center w-full md:w-1/3">
-    //       <h2 className="mb-4 text-xl md:text-2xl font-bold text-[#00ffcc]">
-    //         {character.name}
-    //       </h2>
-    //       <div className="bg-white/5 border border-lime-500/60">
-    //         <img
-    //           src={character.image}
-    //           alt={character.name}
-    //           className="w-full h-auto object-cover p-6 rounded-md"
-    //         />
-    //       </div>
-    //     </div>
-
-    //     <div className="hidden md:block h-40 w-px bg-green-500"></div>
-
-    //     <div className="w-full md:w-2/3 space-y-4 text-sm">
-    //       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-    //         <InfoCard
-    //           icon={<FaHeart className="text-lime-400" />}
-    //           label="Status"
-    //           value={character.status}
-    //         />
-    //         <InfoCard
-    //           icon={<GiRobotGolem className="text-lime-400" />}
-    //           label="Species"
-    //           value={character.species}
-    //         />
-    //         <InfoCard
-    //           icon={<FaTransgender className="text-lime-400" />}
-    //           label="Gender"
-    //           value={character.gender}
-    //         />
-    //       </div>
-
-    //       <InfoCard
-    //         icon={<FaGlobe className="text-lime-400" />}
-    //         label="Origin"
-    //         value={character.origin.name}
-    //         link
-    //       />
-    //       <InfoCard
-    //         icon={<FaMapMarkerAlt className="text-lime-400" />}
-    //         label="Last Known Location"
-    //         value={character.location.name}
-    //         link
-    //       />
-
-    //       <div className="p-4 bg-white/5 border border-lime-500/30 rounded-xl overflow-y-auto max-h-40">
-    //         <div className="flex items-center gap-2">
-    //           <MdPlaylistPlay className="text-lime-500" size={24} />
-    //           <p className="text-sm text-gray-400">Episode({count})</p>
-    //         </div>
-    //         <ul className="list-disc list-inside space-y-1 mt-2">
-    //           {epiName?.map((ep, index) => (
-    //             <li key={index}>{ep}</li>
-    //           ))}
-    //         </ul>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
   );
 };
 

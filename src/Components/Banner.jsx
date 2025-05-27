@@ -8,7 +8,7 @@ const Banner = () => {
     <div className="pt-10 ">
       <div className="lg:text-8xl text-5xl ">
         {/* Line 1 */}
-        <div className="flex items-start justify-start px-10 lg:justify-center space-x-2">
+        <div className="flex items-start justify-start px-10 lg:justify-center lg:items-center space-x-2">
           <div className="flex items-center gap-2 lg:gap-8">
             <span className="text-white font-bold italic ">THE</span>
 
@@ -29,7 +29,7 @@ const Banner = () => {
         </div>
 
         {/* Line 2 */}
-        <div className="flex gap-2 lg:gap-8 px-10 lg:px-66">
+        <div className="flex gap-2 lg:gap-8 px-10 lg:px-93">
           <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400">
             MORTY
           </span>
