@@ -64,12 +64,25 @@ const Location = () => {
           className="flex overflow-x-auto gap-4 scrollbar-hide snap-x scroll-smooth snap-mandatory"
         >
           {locations?.map((location, index) => (
+            // <div
+            //   key={index}
+            //   className="bg-white/5 min-w-[200px] px-4 py-2 bg-[#1a2132] rounded-xl border-1 border-l-cyan-400 border-b-green-300 border-r-green-600 border-t-cyan-600 text-white shadow-md"
+            // >
+            //   <p className="text-xs text-green-400 mb-1">#{location.id}</p>
+            //   <p className="text-sm font-semibold truncate">{location.name}</p>
+            // </div>
+
             <div
-              key={index}
-              className="bg-white/5 min-w-[200px] px-4 py-2 bg-[#1a2132] rounded-xl border-1 border-l-cyan-400 border-b-green-300 border-r-green-600 border-t-cyan-600 text-white shadow-md"
+              className=" min-w-[200px] relative inline-block px-4 py-2 bg-[#1e2235] text-white font-medium text-sm border-1 border-l-cyan-400 border-b-green-300 border-r-green-600 border-t-cyan-600
+                    [clip-path:polygon(0_0,100%_0,100%_85%,95%_100%,0_100%)] 
+                    "
             >
               <p className="text-xs text-green-400 mb-1">#{location.id}</p>
               <p className="text-sm font-semibold truncate">{location.name}</p>
+              <div className="relative">
+                {/* Diagonal Line */}
+                <div className="absolute w-[1px] h-[35px] bg-green-400 -top-3 left-49 transform rotate-52 origin-top-left shadow-[0_0_4px_#00ffff]" />
+              </div>{" "}
             </div>
           ))}
         </div>
