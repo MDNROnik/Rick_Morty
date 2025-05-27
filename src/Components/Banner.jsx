@@ -1,9 +1,7 @@
 import { FaPlay } from "react-icons/fa";
 import portal from "../assets/portal.png";
 const Banner = () => {
-  const handle = () => {
-    console.log("HELEL");
-  };
+  
   return (
     <div className="pt-10 ">
       <div className="lg:text-8xl text-5xl ">

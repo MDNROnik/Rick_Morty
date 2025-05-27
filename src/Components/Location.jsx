@@ -10,10 +10,10 @@ const Location = () => {
 
   const scroll = (offset) => {
     // console.log(scrollRef.current.scrollLeft);
-
+    // console.log(locations);
     setPosition(scrollRef.current.scrollLeft + offset);
 
-    // console.log(scrollRef.current.scrollLeft + offset);
+    console.log(scrollRef.current.scrollLeft + offset);
     scrollRef.current.scrollLeft += offset;
   };
   return (
@@ -24,15 +24,15 @@ const Location = () => {
       <div className="relative px-8 py-10 ">
         {postion > 0 && (
           <button
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white text-lime-500 rounded-full p-2 shadow-md"
+            className="absolute left-0 top-17.5 -translate-y-1/2 z-10 bg-white text-lime-500 rounded-full p-2 shadow-md"
             onClick={() => scroll(-200)}
           >
             <FaChevronLeft />
           </button>
         )}
-        {postion < 3800 && (
+        {postion < 2850 && (
           <button
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white text-lime-500 rounded-full p-2 shadow-md"
+            className="absolute right-0 top-17.5 -translate-y-1/2 z-10 bg-white text-lime-500 rounded-full p-2 shadow-md"
             onClick={() => scroll(200)}
           >
             <FaChevronRight />

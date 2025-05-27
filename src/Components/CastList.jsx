@@ -45,7 +45,7 @@ const CastList = () => {
               <FaChevronLeft />
             </button>
           )}
-          {postion < 2000 && (
+          {postion < 2549 && (
             <button
               className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white text-lime-500 rounded-full p-2 shadow-md"
               onClick={() => scroll(200)}
