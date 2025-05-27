@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { useLoaderData } from "react-router";
 import { Outlet } from "react-router-dom";
-import bg from "./assets/Background.PNG";
+import bg from "./assets/Background.png";
 import Logo from "./assets/logo.png";
 import { DataContext } from "./Context/DataProvider";
 
