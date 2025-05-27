@@ -28,7 +28,7 @@ const Location = () => {
       <div className="relative px-8 py-10 ">
         {postion > 0 && (
           <button
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white text-lime-500 rounded-full p-2 shadow-md"
+            className="absolute left-0 top-17 -translate-y-1/2 z-10 bg-white text-lime-500 rounded-full p-2 shadow-md"
             onClick={() => scroll(-200)}
           >
             <FaChevronLeft />
@@ -36,7 +36,7 @@ const Location = () => {
         )}
         {isLarge && postion < 2815 && (
           <button
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white text-lime-500 rounded-full p-2 shadow-md"
+            className="absolute right-0 top-17 -translate-y-1/2 z-10 bg-white text-lime-500 rounded-full p-2 shadow-md"
             onClick={() => scroll(200)}
           >
             <FaChevronRight />
@@ -44,7 +44,7 @@ const Location = () => {
         )}
         {isMedium && postion < 3601 && (
           <button
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white text-lime-500 rounded-full p-2 shadow-md"
+            className="absolute right-0 top-17 -translate-y-1/2 z-10 bg-white text-lime-500 rounded-full p-2 shadow-md"
             onClick={() => scroll(200)}
           >
             <FaChevronRight />
@@ -52,7 +52,7 @@ const Location = () => {
         )}
         {isSmall && postion < 3915 && (
           <button
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white text-lime-500 rounded-full p-2 shadow-md"
+            className="absolute right-0 top-17 -translate-y-1/2 z-10 bg-white text-lime-500 rounded-full p-2 shadow-md"
             onClick={() => scroll(200)}
           >
             <FaChevronRight />

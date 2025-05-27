@@ -30,11 +30,11 @@ const CastList = () => {
 
   return (
     <div>
-      {/* <>
+      <>
         {isSmall && <p>Small</p>}
         {isMedium && <p>Medium</p>}
         {isLarge && <p>Large</p>}
-      </> */}
+      </>
       <div className="  text-white">
         <div className="flex justify-between items-center px-8 py-4 ">
           <h2 className="text-xl font-semibold ">Meet The Cast</h2>
