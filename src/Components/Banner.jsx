@@ -29,7 +29,7 @@ const Banner = () => {
         </div>
 
         {/* Line 2 */}
-        <div className="flex gap-2 lg:gap-8 px-10 lg:px-93">
+        <div className="flex gap-2 lg:gap-8 px-10 lg:px-100">
           <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400">
             MORTY
           </span>
