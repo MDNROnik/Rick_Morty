@@ -73,7 +73,8 @@ const Location = () => {
             // </div>
 
             <div
-              className=" min-w-[200px] relative inline-block px-4 py-2 bg-[#1e2235] text-white font-medium text-sm border-1 border-l-cyan-400 border-b-green-300 border-r-green-600 border-t-cyan-600
+              key={index}
+              className=" rounded-lg min-w-[200px] relative inline-block px-4 py-2 bg-black/2 text-white font-medium text-sm border-1 border-l-cyan-400 border-b-green-300 border-r-green-600 border-t-cyan-600
                     [clip-path:polygon(0_0,100%_0,100%_85%,95%_100%,0_100%)] 
                     "
             >
@@ -81,7 +82,7 @@ const Location = () => {
               <p className="text-sm font-semibold truncate">{location.name}</p>
               <div className="relative">
                 {/* Diagonal Line */}
-                <div className="absolute w-[2px] h-[35px] bg-green-400 -top-3 left-49 transform rotate-50 origin-top-left " />
+                <div className="absolute w-[2px] h-[30px] bg-green-400 -top-3 left-49 transform rotate-50 origin-top-left " />
               </div>{" "}
             </div>
           ))}
