@@ -16,7 +16,7 @@ const Casts = () => {
           <Link
             to={`/casts/${index}`}
             key={index}
-            className="bg-white/5 rounded-xl border border-l-1 border-r-1 border-b-1 border-t-1 border-b-cyan-400 border-l-green-300 border-t-green-600 border-r-cyan-600 p-4 text-white shadow-md "
+            className="bg-white/5 rounded-xl border-1 border-l-cyan-400 border-b-green-300 border-r-green-600 border-t-cyan-600 p-4 text-white shadow-md "
           >
             <img
               src={member.image}

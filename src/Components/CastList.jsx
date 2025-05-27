@@ -3,6 +3,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { DataContext } from "../Context/DataProvider";
 
+
 const CastList = () => {
   const navigate = useNavigate();
   const { characters } = useContext(DataContext);
@@ -26,6 +27,15 @@ const CastList = () => {
   return (
     // className="w-[1000px] "
     <div>
+      {/* <svg width="200" height="200" viewBox="0 0 100 100">
+        <polygon
+          points="0,0 0, 50 100, 50 100, 30 70,0  0, 0"
+          fill="#3B82F6"
+          stroke="#1E40AF"
+          strokeWidth="2"
+        />
+      </svg> */}
+
       <div className="  text-white">
         <div className="flex justify-between items-center px-8 py-4 ">
           <h2 className="text-xl font-semibold ">Meet The Cast</h2>
@@ -60,7 +70,7 @@ const CastList = () => {
           >
             {characters.map((char, index) => (
               <div
-                className=" relative bg-[#0f172a] text-white rounded-md min-w-[160px] overflow-hidden border border-l-1 border-r-1 border-b-1 border-t-1 border-b-cyan-400 border-l-green-300 border-t-green-600 border-r-cyan-600 "
+                className=" relative bg-[#1a2132] text-white rounded-md min-w-[160px] overflow-hidden border-1 border-l-cyan-400 border-b-green-300 border-r-green-600 border-t-cyan-600 "
                 key={index}
               >
                 <img

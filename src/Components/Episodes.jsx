@@ -11,7 +11,7 @@ const Episodes = () => {
   const scroll = (offset) => {
     // console.log(scrollRef.current.scrollLeft);
     // console.log(episodes);
-    
+
     setPosition(scrollRef.current.scrollLeft + offset);
 
     console.log(scrollRef.current.scrollLeft + offset);
@@ -48,7 +48,7 @@ const Episodes = () => {
           {episodes?.map((episode, index) => (
             <div
               key={index}
-              className="bg-white/5 min-w-[200px] px-4 py-2 bg-[#1a2132] rounded-xl border border-l-1 border-r-1 border-b-1 border-t-1 border-l-cyan-400 border-b-green-300 border-r-green-600 border-t-cyan-600 text-white shadow-md"
+              className="bg-white/5 min-w-[200px] px-4 py-2 bg-[#1a2132] rounded-xl border-1 border-l-cyan-400 border-b-green-300 border-r-green-600 border-t-cyan-600 text-white shadow-md"
             >
               <p className="text-xs text-green-400 mb-1">{episode.episode}</p>
               <p className="text-sm font-semibold truncate">{episode.name}</p>

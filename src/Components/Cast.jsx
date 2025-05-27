@@ -58,7 +58,7 @@ const Cast = () => {
     //   {link && <FiExternalLink className="text-gray-400" />}
     // </div>
     <div
-      className={`bg-white/5 rounded-xl p-4 border border-lime-500/30 text-white flex justify-between items-center ${link ? "cursor-pointer" : ""}`}
+      className={`bg-white/5 rounded-xl p-4 border-1 border-l-cyan-400 border-b-green-300 border-r-green-600 border-t-cyan-600 text-white flex justify-between items-center ${link ? "cursor-pointer" : ""}`}
     >
       <div className="flex flex-col items-start text-white">
         <div className="text-2xl">{icon}</div>
@@ -79,10 +79,10 @@ const Cast = () => {
               {character.name}
             </h1>
           </div>
-          <h2 className="mb-4 text-5xl font-bold text-[#00ffcc]">
+          <h2 className="mb-4 text-5xl font-bold text-cyan-300">
             {character.name}
           </h2>
-          <div className=" bg-white/5  border border-lime-500/60">
+          <div className=" bg-white/5  border-1 border-l-cyan-400 border-b-green-300 border-r-green-600 border-t-cyan-600">
             <img
               src={character.image}
               alt={character.name}
@@ -91,7 +91,7 @@ const Cast = () => {
           </div>
         </div>
 
-        <div className="h-40 w-px bg-green-500 mx-4 hidden sm:block"></div>
+        <div className="h-40 w-px  border-1 border-l-cyan-400 border-b-green-300 border-r-green-600 border-t-cyan-600 mx-4 hidden sm:block md:hidden "></div>
 
         <div className="space-y-4 text-sm">
           <div className="grid grid-cols-3 gap-4">
@@ -125,7 +125,7 @@ const Cast = () => {
             link
           />
 
-          <section className="custom-scrollbar col-span-2 p-4 bg-white/5 border border-lime-500/30 rounded-xl  overflow-y-auto max-h-40">
+          <section className="custom-scrollbar col-span-2 p-4 bg-white/5 border-1 border-l-cyan-400 border-b-green-300 border-r-green-600 border-t-cyan-600 rounded-xl  overflow-y-auto max-h-40">
             <span className="text-lime-500">
               <MdPlaylistPlay size={32} />
             </span>
